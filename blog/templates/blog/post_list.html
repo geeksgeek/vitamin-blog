@@ -1,6 +1,21 @@
 <!-- blog/templates/blog/post_list.html -->
 
-    <html>
-        <p>Hi there!</p>
-        <p>It works!</p>
-    </html>
+<html>
+	<head>
+		<title>vitamin blog</title>
+	</head>
+
+	<body>
+		<div>
+    		<h1><a href="/">vitamin Blog</a></h1>
+		</div>
+
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
+	</body>
+</html>
